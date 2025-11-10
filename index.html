@@ -80,9 +80,9 @@
         .social-links a:hover {
             color: #ffffff;
         }
-        .hours { 
-            font-style: italic; 
-            color: #d0f0c0; 
+        .hours {
+            font-style: italic;
+            color: #d0f0c0;
         }
 
         /* === BARRA PRINCIPAL: LOGO + MENÚ (FONDO BLANCO) === */
@@ -135,6 +135,29 @@
             color: #ffed4e;
         }
 
+        /* === BOTÓN MENÚ (HAMBURGUESA) === */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--oceanas-blue);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        [data-theme="dark"] .menu-toggle {
+            color: #ffffff;
+        }
+        .menu-toggle:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        [data-theme="dark"] .menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
         /* === RESPONSIVE: MÓVIL === */
         @media (max-width: 768px) {
             .header-top .container {
@@ -156,48 +179,46 @@
                 flex-direction: column;
                 gap: 15px;
                 text-align: center;
+                position: relative;
+                padding: 1rem;
             }
+
             .logo img {
-                height: 80px;
+                height: 70px;
             }
+
             .nav-menu {
                 display: none;
                 flex-direction: column;
                 gap: 15px;
-                background: #ffffff;
-                padding: 1rem;
+                background: var(--bg);
+                padding: 1.5rem;
                 width: 100%;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 z-index: 999;
                 border: 1px solid var(--border);
+                box-shadow: var(--shadow);
+                border-radius: 0 0 12px 12px;
             }
+
             [data-theme="dark"] .nav-menu {
                 background: #1e1e1e !important;
                 border-color: #444 !important;
             }
+
             .nav-menu.active {
                 display: flex;
             }
+
             .menu-toggle {
                 display: block;
-                background: none;
-                border: none;
-                color: var(--oceanas-blue);
-                font-size: 1.6rem;
-                cursor: pointer;
                 position: absolute;
                 right: 1rem;
                 top: 50%;
                 transform: translateY(-50%);
             }
-            [data-theme="dark"] .menu-toggle {
-                color: #ffffff;
-            }
-        }
-        .menu-toggle { 
-            display: none; 
         }
 
         /* === CONTENIDO === */
