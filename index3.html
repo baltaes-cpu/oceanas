@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Náutica OCEANAS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0056b3; --secondary: #007BFF; --light: #f8f9fa; --dark: #212529;
+            --gray: #6c757d; --success: #28a745; --border: #dee2e6; --text: #333;
+            --bg: #ffffff; --card-bg: #ffffff; --shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        [data-theme="dark"] {
+            --primary: #1e90ff; --secondary: #0d6efd; --light: #212529; --dark: #f8f9fa;
+            --gray: #adb5bd; --success: #20c997; --border: #495057; --text: #f8f9fa;
+            --bg: #121212; --card-bg: #1e1e1e; --shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', sans-serif; background: var(--bg); color: var(--text);
+            line-height: 1.6; transition: all 0.3s ease;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white; padding: 1.5rem 0; text-align: center; box-shadow: var(--shadow);
+        }
+        nav {
+            background: var(--card-bg); padding: 1rem 0; box-shadow: var(--shadow);
+            position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border);
+        }
+        nav ul {
+            list-style: none; display: flex; justify-content: center; flex-wrap: wrap;
+        }
+        nav li { margin: 0.5rem 1.5rem; }
+        nav a {
+            color: var(--primary); text-decoration: none; font-weight: 500;
+            padding: 0.5rem 0; border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        nav a:hover { color: var(--secondary); border-bottom: 2px solid var(--secondary); }
+        main { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        section {
+            background: var(--card-bg); padding: 2rem; border-radius: 12px;
+            margin-bottom: 2rem; box-shadow: var(--shadow); border: 1px solid var(--border);
+        }
+        h2 {
+            color: var(--primary); font-weight: 300; font-size: 2rem; text-align: center;
+            margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.8rem;
+        }
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
+        }
+        .service-item {
+            background: var(--light); padding: 1.5rem; border-radius: 8px; text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .service-item:hover { transform: translateY(-5px); }
+        .service-item h3 { color: var(--secondary); margin-bottom: 1rem; }
+        .theme-toggle {
+            position: fixed; top: 1rem; right: 1rem; background: rgba(255,255,255,0.2);
+            border: none; color: white; width: 40px; height: 40px; border-radius: 50%;
+            cursor: pointer; font-size: 1.2rem; backdrop-filter: blur(5px);
+            transition: all 0.3s ease; z-index: 1001;
+        }
+        .theme-toggle:hover { background: rgba(255,255,255,0.3); transform: scale(1.1); }
+        .whatsapp-float {
+            position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white;
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 1.8rem; box-shadow: 0 4px 12px rgba(37,211,102,0.4);
+            z-index: 1000; transition: all 0.3s ease; animation: pulse 2s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 16px rgba(37,211,102,0.6); }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); } 70% { box-shadow: 0 0 0 10px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+        footer {
+            background: var(--primary); color: white; text-align: center;
+            padding: 2rem 0; margin-top: 4rem;
+        }
+        @media (max-width: 768px) {
+            nav ul { flex-direction: column; align-items: center; }
+            .theme-toggle { top: 0.8rem; right: 0.8rem; }
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <button class="theme-toggle" onclick="toggleTheme()" title="Cambiar tema">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <header>
+        <div style="max-width:1200px;margin:0 auto;padding:0 1rem;text-align:center;">
+            <img src="oceanas22.jpeg" alt="Oceanas">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="formacion.html">Formación</a></li>
+            <li><a href="tarifas.html">Tarifas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-item"><h3>Licencia de Navegación</h3><p>Obtén tu licencia básica.</p></div>
+                <div class="service-item"><h3>PNB</h3><p>Patrón para Navegación Básica.</p></div>
+                <div class="service-item"><h3>PER</h3><p>Prácticas de Embarcaciones de Recreo.</p></div>
+                <div class="service-item"><h3>Ampliación PER 24m</h3><p>Extiende tu PER a 24 metros.</p></div>
+                <div class="service-item"><h3>Radio Corto Alcance PER</h3><p>Certificación VHF.</p></div>
+                <div class="service-item"><h3>Habilitación Vela</h3><p>Navegación a vela.</p></div>
+                <div class="service-item"><h3>Teoría: PY / CY / PPER</h3><p>Clases teóricas avanzadas.</p></div>
+                <div class="service-item"><h3>Prácticas de Navegación (Motor/Vela)</h3><p>Sesiones de refuerzo.</p></div>
+                <div class="service-item"><h3>Mantenimiento Embarcaciones</h3><p>Servicios profesionales.</p></div>
+                <div class="service-item"><h3>Limpieza Subacuática de Cascos</h3><p>Limpieza bajo el agua.</p></div>
+                <div class="service-item"><h3>Poner / Quitar Boyas</h3><p>Instalación de amarre.</p></div>
+                <div class="service-item"><h3>Bautismos de Buceo</h3><p>Introducción al buceo.</p></div>
+                <div class="service-item"><h3>Salidas con Titulados</h3><p>Excursiones guiadas.</p></div>
+            </div>
+        </section>
+    </main>
+
+    <a href="https://wa.me/34625516001?text=¡Hola!%20Quiero%20información" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>© 2025 Náutica OCEANAS. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            const icon = document.querySelector('.theme-toggle i');
+            icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        window.addEventListener('load', () => {
+            const saved = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.body.setAttribute('data-theme', saved);
+            const icon = document.querySelector('.theme-toggle i');
+            if (icon) icon.className = saved === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        });
+    </script>
+</body>
+</html>
