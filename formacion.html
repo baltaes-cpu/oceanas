@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formación - Náutica OCEANAS</title>
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
@@ -66,7 +66,7 @@
         [data-theme="dark"] .nav-menu a { color: #ffffff; }
         [data-theme="dark"] .nav-menu a:hover { color: #ffed4e; }
 
-        /* === RESPONSIVE === */
+        /* === RESPONSIVE MENU === */
         @media (max-width: 768px) {
             .header-top .container { flex-direction: column; gap: 8px; text-align: center; }
             .contact-info { flex-wrap: wrap; justify-content: center; gap: 12px; font-size: 0.85rem; }
@@ -89,7 +89,7 @@
         }
         .menu-toggle { display: none; }
 
-        /* === MAIN === */
+        /* === MAIN CONTENT === */
         main { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
         section {
             background: var(--card-bg); padding: 2rem; border-radius: 12px;
@@ -99,17 +99,27 @@
             color: var(--primary); font-weight: 300; font-size: 2rem; text-align: center;
             margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.8rem;
         }
-        h3 { margin: 1.5rem 0 1rem; color: var(--secondary); }
-        table {
-            width: 100%; border-collapse: collapse; margin-top: 1rem;
-            background: var(--light); border-radius: 8px; overflow: hidden;
+        .course-card {
+            background: var(--light); padding: 1.5rem; border-radius: 8px;
+            margin-bottom: 1.5rem; border-left: 5px solid var(--secondary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        th, td {
-            padding: 12px; text-align: left; border-bottom: 1px solid var(--border);
+        .course-card:hover {
+            transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
-        th { background: var(--secondary); color: white; }
-        tr:hover { background: rgba(0,0,0,0.05); }
-        [data-theme="dark"] tr:hover { background: rgba(255,255,255,0.1); }
+        .course-card h3 {
+            color: var(--secondary); margin-bottom: 0.5rem; font-size: 1.3rem;
+        }
+        .course-card p {
+            margin: 0.5rem 0; color: var(--gray);
+        }
+        .price {
+            font-weight: 700; color: var(--success); font-size: 1.3rem;
+            display: block; margin-top: 0.8rem;
+        }
+        .note {
+            text-align: center; color: var(--gray); font-style: italic; margin-top: -1rem; margin-bottom: 1.5rem;
+        }
 
         /* === BOTONES === */
         .theme-toggle {
@@ -152,9 +162,9 @@
                 <li>L-V 10-17h</li>
             </ul>
             <ul class="social-links">
-                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://www.facebook.com/oceanas.roses" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/oceanas_5/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.youtube.com/@NauticaOceanas" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a></li>
             </ul>
         </div>
     </header>
@@ -185,21 +195,66 @@
     <main>
         <section>
             <h2>Cursos de Formación</h2>
-            <p style="text-align:center;color:var(--gray);">Precios estimados. IVA no incluido.</p>
-            <div class="course-card"><h3>Licencia de Navegación</h3><p>Curso básico. 20h.</p><span class="price">€150</span></div>
-            <div class="course-card"><h3>PNB</h3><p>Navegación básica. 30h.</p><span class="price">€250</span></div>
-            <div class="course-card"><h3>PER</h3><p>Navegación costera. 50h.</p><span class="price">€450</span></div>
-            <div class="course-card"><h3>Ampliación PER 24m</h3><p>Extensión. 20h.</p><span class="price">€300</span></div>
-            <div class="course-card"><h3>Radio Corto Alcance</h3><p>VHF. 12h.</p><span class="price">€120</span></div>
-            <div class="course-card"><h3>Habilitación Vela</h3><p>PER + Vela. 16h.</p><span class="price">€200</span></div>
-            <div class="course-card"><h3>Teoría PY/CY/PPER</h3><p>Avanzado. 40h.</p><span class="price">€350</span></div>
-            <div class="course-card"><h3>Prácticas Refuerzo</h3><p>Motor/Vela. 8h/sesión.</p><span class="price">€180</span></div>
-            <div class="course-card"><h3>Bautismos de Buceo</h3><p>Introducción. 4h.</p><span class="price">€80</span></div>
+            <p class="note">Precios estimados. IVA no incluido.</p>
+
+            <div class="course-card">
+                <h3>Licencia de Navegación</h3>
+                <p>Curso básico para manejar embarcaciones de hasta 6 metros.</p>
+                <span class="price">€150</span>
+            </div>
+
+            <div class="course-card">
+                <h3>PNB</h3>
+                <p>Patrón para Navegación Básica. Embarcaciones hasta 8 metros.</p>
+                <span class="price">€250</span>
+            </div>
+
+            <div class="course-card">
+                <h3>PER</h3>
+                <p>Patrón de Embarcaciones de Recreo. Hasta 15 metros y 12 millas.</p>
+                <span class="price">€450</span>
+            </div>
+
+            <div class="course-card">
+                <h3>Ampliación PER 24m</h3>
+                <p>Extiende tu PER para barcos de hasta 24 metros.</p>
+                <span class="price">€300</span>
+            </div>
+
+            <div class="course-card">
+                <h3>Radio Corto Alcance</h3>
+                <p>Certificación oficial VHF para comunicaciones marítimas.</p>
+                <span class="price">€120</span>
+            </div>
+
+            <div class="course-card">
+                <h3>Habilitación Vela</h3>
+                <p>Complemento para navegación a vela con el PER.</p>
+                <span class="price">€200</span>
+            </div>
+
+            <div class="course-card">
+                <h3>Teoría PY / CY / PPER</h3>
+                <p>Cursos avanzados: Patrón de Yate, Capitán de Yate, PPER.</p>
+                <span class="price">€350</span>
+            </div>
+
+            <div class="course-card">
+                <h3>Prácticas de Refuerzo</h3>
+                <p>Sesiones prácticas motor o vela. 8h por sesión.</p>
+                <span class="price">€180</span>
+            </div>
+
+            <div class="course-card">
+                <h3>Bautismos de Buceo</h3>
+                <p>Primera experiencia bajo el agua con instructor titulado.</p>
+                <span class="price">€80</span>
+            </div>
         </section>
     </main>
 
     <!-- WHATSAPP -->
-    <a href="https://wa.me/34625516001?text=¡Hola!%20Quiero%20información" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/34625516001?text=¡Hola!%20Quiero%20información%20sobre%20formación" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -233,4 +288,3 @@
     </script>
 </body>
 </html>
-   
