@@ -28,7 +28,43 @@
             font-family: 'Roboto', sans-serif; background: var(--bg); color: var(--text);
             line-height: 1.6; transition: all 0.3s ease;
         }
+       .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
 
+       .logo {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap; /* Permite que se acomoden en varias líneas si no caben */
+            justify-content: center;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+            transition: transform 0.3s ease;
+         }
+
+        .logo img:hover {
+            transform: scale(1.1);
+         }
+
+        /* ✅ Responsive para pantallas pequeñas */
+             @media (max-width: 600px) {
+            .logo {
+                flex-direction: column; /* Las imágenes se apilan verticalmente */
+                gap: 10px;
+          }
+
+         .logo img {
+                width: 80%; /* Se ajustan al ancho del móvil */
+                max-width: 300px;
+             margin: 0 auto;
+         }
+}
         /* === BARRA SUPERIOR: FONDO VERDE OSCURO === */
         .header-top {
             background-color: var(--topbar-bg);
